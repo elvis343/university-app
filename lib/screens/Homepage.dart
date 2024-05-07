@@ -3,6 +3,7 @@ import 'package:university_app/screens/Home.dart';
 import 'package:university_app/screens/profile.dart';
 import 'package:university_app/screens/grades.dart';
 import 'package:university_app/screens/course.dart';
+import 'package:university_app/screens/about_us.dart';
 
 class Homepage extends StatefulWidget{
   const Homepage({super.key});
@@ -16,10 +17,11 @@ class _HomepageState extends State<Homepage> {
   int _currentindex=0;
   
   List<Widget> widgetlist=[
-    Home(),
-    Course(),
-    grades(),
-    profile(),
+    const Home(),
+    const Course(),
+    Grades(),
+    const Profile(),
+    const About_Us(),
 
   ];
   @override
@@ -31,8 +33,8 @@ class _HomepageState extends State<Homepage> {
 
     backgroundColor: Colors.grey,
     body:IndexedStack(
-      children: widgetlist,
       index: _currentindex,
+      children: widgetlist,
     ),
      bottomNavigationBar:BottomNavigationBar(
       backgroundColor: Colors.black,
@@ -58,10 +60,11 @@ class _HomepageState extends State<Homepage> {
         BottomNavigationBarItem(
          icon: Icon(Icons.book),
          label:'Course',
-       backgroundColor: Colors.black,
+       backgroundColor: Color.fromARGB(225, 7, 77, 77),
+  
       
        
-      ),  
+       ),  
       BottomNavigationBarItem(
          icon: Icon(Icons.grade_sharp),
          label:'Grades',
@@ -73,6 +76,11 @@ class _HomepageState extends State<Homepage> {
          label:'Profile',
         backgroundColor: Colors.black,
        
+      ),
+      BottomNavigationBarItem(
+         icon: Icon(Icons.person),
+         label:'Aboutus',
+        backgroundColor: Colors.black,
       ),
       
     ],

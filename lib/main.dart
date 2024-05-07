@@ -1,9 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:university_app/screens/Splashscreen.dart';
-//import 'package:university_app/screens/home_screens.dart';
+import 'firebase_options.dart'; 
+import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:university_app/screens/Splash_screen.dart';
+import 'package:university_app/screens/Home.dart'; 
+import 'package:university_app/screens/Login.dart'; 
 
+void main() async {
+  // Initialize Firebase
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
-void main() {
+  // Run the app
   runApp(const MyApp());
 }
 
@@ -12,14 +22,37 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      home:Splashscreen(),
+      home: const AuthenticationWrapper(), 
       debugShowCheckedModeBanner: false,
-);
+    );
+  }
 }
-} 
 
+class AuthenticationWrapper extends StatelessWidget {
+  const AuthenticationWrapper({Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.authStateChanges(), // Listen for authentication state changes
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // Show loading indicator while checking authentication state
+          return const CircularProgressIndicator();
+        } else {
+          // Check if user is authenticated
+          if (snapshot.hasData) {
+            // User is authenticated, navigate to home screen
+            return const Home();
+          } else {
+            // User is not authenticated, navigate to login screen
+            return const Login();
+          }
+        }
+      },
+    );
+  }
+}
 
- 

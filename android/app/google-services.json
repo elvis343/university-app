@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1067534751605",
+    "firebase_url": "https://university-app-1d194-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "university-app-1d194",
+    "storage_bucket": "university-app-1d194.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067534751605:android:555d306e0abe1c8149a53c",
+        "android_client_info": {
+          "package_name": "com.example.education_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNus6CeDGQTa_VUv9GMt8GTXDuS0p_tPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

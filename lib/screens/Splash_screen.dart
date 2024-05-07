@@ -1,33 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:university_app/screens/Log in.dart';
+import 'package:university_app/screens/Login.dart';
 
 class Splashscreen extends StatefulWidget {
-  const Splashscreen({super.key});
+ const Splashscreen({super.key});
 
   @override
-  State<Splashscreen> createState() => splashscreenstate();
+  State<Splashscreen> createState() => SplashscreenState();
 }
 
-class splashscreenstate extends State<Splashscreen>
-    with SingleTickerProviderStateMixin {
+class SplashscreenState extends State<Splashscreen> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive); // Correct method name
     Future.delayed(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Login(),
-          ));
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Login(),
+        ),
+      );
     });
   }
 
   @override
   void dispose() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual);
     super.dispose();
   }
 
@@ -46,7 +45,7 @@ class splashscreenstate extends State<Splashscreen>
               size: 120,
             ),
             Text(
-              'Welcome to Iverson University',
+              'Welcome to Bottega University',
               style: TextStyle(
                 fontSize: 30,
               ),

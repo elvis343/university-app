@@ -1,0 +1,28 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "university-app-1d194",
+          "appId": "1:1067534751605:android:555d306e0abe1c8149a53c",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "university-app-1d194",
+          "configurations": {
+            "android": "1:1067534751605:android:555d306e0abe1c8149a53c",
+            "ios": "1:1067534751605:ios:f9b27613fd5e7bb849a53c",
+            "macos": "1:1067534751605:ios:f9b27613fd5e7bb849a53c",
+            "web": "1:1067534751605:web:d4f334e950ad900a49a53c",
+            "windows": "1:1067534751605:web:e83ff24f517a079f49a53c"
+          }
+        }
+      }
+    }
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}
