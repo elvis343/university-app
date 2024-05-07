@@ -17,14 +17,14 @@ class About_Us extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // University Logo or Image
+            
             Container(
               width: 150,
               height: 150,
               decoration: BoxDecoration(
              image: DecorationImage(
              image: AssetImage('Assets/images/university_logo.PNG'),
-             fit: BoxFit.cover, // Adjust the fit as needed
+             fit: BoxFit.cover, 
              ),
                 borderRadius: BorderRadius.circular(80),
                 border: Border.all(
@@ -34,7 +34,7 @@ class About_Us extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20.0),
-            // University Name and Description
+            
             const Text(
               'Botegga university',
               style: TextStyle(
@@ -53,16 +53,16 @@ class About_Us extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20.0),
-            // Contact Information
+            
             const ListTile(
               leading: Icon(Icons.phone),
-              title: Text('+123 456 7890'),
+              title: Text('+0712453675/+20415624728'),
             ),
             const ListTile(
               leading: Icon(Icons.email),
-              title: Text('info@university.com'),
+              title: Text('info@Bottegauniversity.com'),
             ),
-            // Add more contact details as needed
+            
           ],
         ),
       ),
